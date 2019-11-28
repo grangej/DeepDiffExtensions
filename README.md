@@ -1,3 +1,3 @@
 # DeepDiffExtensions
 
-A description of this package.
+A collection of extensions for UIKit to make working with DeepDiff easier
