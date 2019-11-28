@@ -5,7 +5,7 @@ import RxCocoa
 import Logger
 import DeepDiff
 
-protocol DiffAwareCollectionViewController: class {
+public protocol DiffAwareCollectionViewController: class {
 
     associatedtype SectionType: DiffAwareSectionModelType
 
@@ -19,7 +19,7 @@ protocol DiffAwareCollectionViewController: class {
     func bindCollectionView(sections: BehaviorRelay<[SectionType]>)
 }
 
-extension DiffAwareCollectionViewController {
+public extension DiffAwareCollectionViewController {
 
     func bindCollectionView(sections: BehaviorRelay<[SectionType]>) {
 
@@ -65,8 +65,7 @@ extension DiffAwareCollectionViewController {
     }
 }
 
-extension UICollectionView {
-
+public extension UICollectionView {
 
     func reload<SectionType: DiffAwareSectionModelType>(
         changesWithIndexPath: SectionChangesWithIndexPath<SectionType>,

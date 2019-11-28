@@ -1,13 +1,13 @@
 import DeepDiff
 import UIKit
 
-struct CollectionUpdates<SectionType: DiffAwareSectionModelType> {
+public struct CollectionUpdates<SectionType: DiffAwareSectionModelType> {
 
-    let changes: SectionChangesWithIndexPath<SectionType>
-    let sections: [SectionType]
+    public let changes: SectionChangesWithIndexPath<SectionType>
+    public let sections: [SectionType]
 }
 
-protocol DiffAwareSectionModelType: DiffAware, Equatable where ItemType: DiffAware {
+public protocol DiffAwareSectionModelType: DiffAware, Equatable where ItemType: DiffAware {
     associatedtype ItemType
     var items: [ItemType] { get }
 }
@@ -20,7 +20,7 @@ public extension IndexSet {
   }
 }
 
-extension UITableView {
+public extension UITableView {
 
     /// Animate reload in a batch update
     ///
@@ -141,15 +141,15 @@ extension UITableView {
     }
 }
 
-struct ChangeWithIndexSet {
+public struct ChangeWithIndexSet {
 
-    let inserts: IndexSet
-    let deletes: IndexSet
-    let replaces: IndexSet
-    let moves: [(from: Int, to: Int)]
+    public let inserts: IndexSet
+    public let deletes: IndexSet
+    public let replaces: IndexSet
+    public let moves: [(from: Int, to: Int)]
 }
 
-extension UICollectionView {
+public extension UICollectionView {
 
     func convert<T>(changes: [Change<T>]) -> ChangeWithIndexSet {
 

@@ -5,7 +5,7 @@ import RxCocoa
 import Logger
 import DeepDiff
 
-protocol DiffAwareTableViewController: class {
+public protocol DiffAwareTableViewController: class {
 
     associatedtype SectionType: DiffAwareSectionModelType
 
@@ -23,7 +23,7 @@ protocol DiffAwareTableViewController: class {
     func bindTableView(sections: BehaviorRelay<[SectionType]>)
 }
 
-extension DiffAwareTableViewController  {
+public extension DiffAwareTableViewController  {
 
     var insertionAnimation: UITableView.RowAnimation { return .automatic }
     var deletionAnimation: UITableView.RowAnimation { return .automatic }

@@ -1,6 +1,6 @@
 import Foundation
 
-extension Int {
+public extension Int {
 
     func toIndexPath(section: Int) -> IndexPath {
         return IndexPath(item: self, section: section)

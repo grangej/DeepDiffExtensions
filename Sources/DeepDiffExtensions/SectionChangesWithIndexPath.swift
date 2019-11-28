@@ -1,7 +1,7 @@
 import Foundation
 import DeepDiff
 
-struct SectionChangesWithIndexPath<SectionType: DiffAwareSectionModelType> {
+public struct SectionChangesWithIndexPath<SectionType: DiffAwareSectionModelType> {
 
     public let sectionInserts: IndexSet
     public let sectionDeletes: IndexSet
@@ -31,7 +31,7 @@ struct SectionChangesWithIndexPath<SectionType: DiffAwareSectionModelType> {
     /// *caution* this could be an expensive operation and should NOT be performed no the main thread
     /// - Parameter existingSections: existing sections before the update
     /// - Parameter updatedSections: updated sections after the update
-    init(existingSections: [SectionType], updatedSections: [SectionType]) {
+    public init(existingSections: [SectionType], updatedSections: [SectionType]) {
 
         let sectionChanges = diff(old: existingSections, new: updatedSections)
 
