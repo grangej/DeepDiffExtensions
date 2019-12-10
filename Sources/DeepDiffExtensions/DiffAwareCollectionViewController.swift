@@ -15,6 +15,7 @@ public protocol DiffAwareCollectionViewController: class {
     var disposeBag: DisposeBag { get }
     var sections: [SectionType] { get set }
 
+    func updateLayoutCache(indexPaths: [IndexPath])
     func clearLayoutCache()
     func bindCollectionView(sections: BehaviorRelay<[SectionType]>)
 }
@@ -53,6 +54,9 @@ public extension DiffAwareCollectionViewController {
 
                                     sdn_log(object: "update data called", category: Category.custom(categoryName: "CollectionViewDebug"),logType: .debug)
                                     self?.sections = updates.sections
+
+                                    let changedIndexPaths = updates.changes.inserts + updates.changes.deletes
+                                    self?.updateLayoutCache(indexPaths: changedIndexPaths)
                                     self?.clearLayoutCache()
 
             }, completion: { [weak self] (completed) in
