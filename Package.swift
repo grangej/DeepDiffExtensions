@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/onmyway133/DeepDiff.git", from: "2.3.0"),
+        .package(url: "https://github.com/onmyway133/DeepDiff.git", from: "3.2.3"),
         .package(url: "https://github.com/grangej/Logger.git", from: "5.2.0"),
         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "5.0.0"),
 
