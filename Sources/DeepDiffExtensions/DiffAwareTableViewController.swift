@@ -5,7 +5,7 @@ import RxCocoa
 import Logger
 import DeepDiff
 
-public protocol DiffAwareTableViewController: class {
+public protocol DiffAwareTableViewController: AnyObject {
 
     associatedtype SectionType: DiffAwareSectionModelType
 
@@ -35,7 +35,7 @@ public extension DiffAwareTableViewController  {
     func bindTableView(sections: BehaviorRelay<[SectionType]>) {
 
         let sourceName = self.sourceName
-        sections.distinctUntilChanged().skip(1).observeOn(lockScheduler).map { [weak self] (updatedSections) -> CollectionUpdates<SectionType>?  in
+        sections.distinctUntilChanged().skip(1).observe(on: lockScheduler).map { [weak self] (updatedSections) -> CollectionUpdates<SectionType>?  in
 
             if self == nil { return nil }
             sdn_log(object: "acquire lock", category: Category.threadLock, logType: .debug)
@@ -49,7 +49,7 @@ public extension DiffAwareTableViewController  {
             let changes = SectionChangesWithIndexPath(existingSections: existingSections, updatedSections: updatedSections)
 
             return CollectionUpdates(changes: changes, sections: updatedSections)
-        }.compactMap { $0 }.observeOn(MainScheduler.instance).bind { [weak self] (updates) in
+        }.compactMap { $0 }.observe(on: MainScheduler.instance).bind { [weak self] (updates) in
 
             guard let self = self else { return }
 
