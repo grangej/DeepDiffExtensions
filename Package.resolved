@@ -1,34 +1,41 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "DeepDiff",
-        "repositoryURL": "https://github.com/onmyway133/DeepDiff.git",
-        "state": {
-          "branch": null,
-          "revision": "010ebbe1ce5ebeaee37a3d2f4a8c03f0e75b8045",
-          "version": "2.3.1"
-        }
-      },
-      {
-        "package": "Logger",
-        "repositoryURL": "https://github.com/grangej/Logger.git",
-        "state": {
-          "branch": null,
-          "revision": "62544052f16fcacbfddb3c856ad6d12072caaf0b",
-          "version": "5.3.0"
-        }
-      },
-      {
-        "package": "RxSwift",
-        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
-        "state": {
-          "branch": null,
-          "revision": "7c17a6ccca06b5c107cfa4284e634562ddaf5951",
-          "version": "6.2.0"
-        }
+  "pins" : [
+    {
+      "identity" : "deepdiff",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onmyway133/DeepDiff.git",
+      "state" : {
+        "revision" : "2639b3a11054d666a4c5ec1b7dd2808e437f3289",
+        "version" : "2.3.3"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "logger",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/grangej/Logger.git",
+      "state" : {
+        "revision" : "e4a6e73a961d8880840594d46dceb8138ecdfe87",
+        "version" : "6.0.0"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
+        "version" : "6.6.0"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "532d8b529501fb73a2455b179e0bbb6d49b652ed",
+        "version" : "1.5.3"
+      }
+    }
+  ],
+  "version" : 2
 }
